@@ -903,7 +903,7 @@ int main()
 	int flag = 1;
 	string path = "myFile.txt";
 	empty_file(path, salon, count, count_1);
-	system("pause");
+	Sleep(500);
 	system("cls");
 
 	while (flag != 0)
@@ -912,8 +912,8 @@ int main()
 		cout << "-----------------------MENU------------------" << endl;
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5);
 
-		cout << "    --   --      |-------  |    |  |       |                  ________/        " << endl;
-		cout << "   /  \\ /  \\     |         |\\   |  |       |                _/      //\\_ PLANE" << endl;
+		cout << "    --   --      |-------  |    |  |       |  INK Corporation ________/   PLANE"<< endl;
+		cout << "   /  \\ /  \\     |         |\\   |  |       |                _/      //\\_   " << endl;
 		cout << "  /    |    \\    |_______  | \\  |  |       |               /      _//   \\   " << endl;
 		cout << " /           \\   |         |  \\ |  |       |           ___|______/ /     |   " << endl;
 		cout << "/             \\  |_______  |   \\|  |_______|           \\==|=====/ /|     |  " << endl;
