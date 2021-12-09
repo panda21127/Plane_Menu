@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <windows.h>
 #include <string.h>
 #include<algorithm>
@@ -185,6 +185,30 @@ int add(string path, plane* salon, int count, int count_1[])
 		count_1[0] = +count_1[1] - 1;
 		cout << "How many passengers" << '\n';
 		count = onlyNumbers();
+		while (((count <= 0) && (count >= 0)))
+		{
+			if (((count <= 0) && (count >= 0)))
+			{
+				count = 0;
+				cout << "Prover";
+				count = onlyNumbers();
+			}
+		}
+		while (count <= 0)
+		{
+			cout << " -_- " << endl;
+			cout << "Enter a number from the list " << endl;
+			count = onlyNumbers();
+			while (((count <= 0) && (count >= 0)))
+			{
+				if (((count <= 0) && (count >= 0)))
+				{
+					count = 0;
+					cout << "Prover";
+					count = onlyNumbers();
+				}
+			}
+		}
 		count += count_1[0];
 		for (int i = count_1[0]; i < count; i++)
 		{
@@ -356,6 +380,30 @@ void pechati(string path, plane* salon, int count_1[])
 	int passenger;
 	cout << "Please input number student" << '\t';
 	passenger = onlyNumbers();
+	while (((passenger <= 0) && (passenger >= 0)))
+	{
+		if (((passenger <= 0) && (passenger >= 0)))
+		{
+			passenger = 0;
+			cout << "Prover";
+			passenger = onlyNumbers();
+		}
+	}
+	while (passenger <= 0)
+	{
+		cout << " -_- " << endl;
+		cout << "Enter a number from the list " << endl;
+		passenger = onlyNumbers();
+		while (((passenger <= 0) && (passenger >= 0)))
+		{
+			if (((passenger <= 0) && (passenger >= 0)))
+			{
+				passenger = 0;
+				cout << "Prover";
+				passenger = onlyNumbers();
+			}
+		}
+	}
 	passenger -= 1;
 	perevod(path, salon, count_1);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3);
@@ -516,6 +564,31 @@ int empty_file(string path, plane* salon, int count, int count_1[])
 		fout.open(path, ofstream::app);
 		cout << "How many passengers" << '\n';
 		count = onlyNumbers();
+		while (((count <= 0) && (count >= 0)))
+		{
+			if (((count <= 0) && (count >= 0)))
+			{
+				count = 0;
+				cout << "Prover";
+				count = onlyNumbers();
+			}
+		}
+		while (((count >= 30) || (count <= 0)))
+		{
+			cout << " -_- " << endl;
+			cout << "Enter a number from the list " << endl;
+			count = onlyNumbers();
+			while (((count <= 0) && (count >= 0)))
+			{
+				if (((count <= 0) && (count >= 0)))
+				{
+					count = 0;
+					cout << "Prover";
+					count = onlyNumbers();
+				}
+			}
+		}
+
 		count += count_1[0];
 		for (int i = count_1[0]; i < count; i++)
 		{
