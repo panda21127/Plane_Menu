@@ -922,7 +922,7 @@ int main()
 		cout << "Enter 2 to view passenger information               "; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5); cout << "       \\_ / / ||   _/     " << endl; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 		cout << "Enter 3 to find a flights and passengers by company "; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5); cout << "      ___/_/__||__/       " << endl; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 		cout << "Enter 4 to find a  passengers by dates              "; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 5); cout << "      \\___/   \\|          " << endl; SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-		cout << "Enter 5 to exit";
+		cout << "Enter 5 to exit"<<endl;
 		cout << "Input:     ";
 		number = onlyNumbers();
 		switch (number)
