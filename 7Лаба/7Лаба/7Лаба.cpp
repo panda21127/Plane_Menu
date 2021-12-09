@@ -185,15 +185,6 @@ int add(string path, plane* salon, int count, int count_1[])
 		count_1[0] = +count_1[1] - 1;
 		cout << "How many passengers" << '\n';
 		count = onlyNumbers();
-		while (((count <= 0) && (count >= 0)))
-		{
-			if (((count <= 0) && (count >= 0)))
-			{
-				count = 0;
-				cout << "Prover";
-				count = onlyNumbers();
-			}
-		}
 		while (count <= 0)
 		{
 			cout << " -_- " << endl;
@@ -213,7 +204,7 @@ int add(string path, plane* salon, int count, int count_1[])
 		for (int i = count_1[0]; i < count; i++)
 		{
 			cout << "Enter the data" << endl << endl;
-			cout << "Passenger's last name and name: ";
+			cout << "Last name and first name of the passenger (separated by a space): ";
 			string name;
 			string surname;
 			cin >> surname >> name;
@@ -616,7 +607,7 @@ int empty_file(string path, plane* salon, int count, int count_1[])
 		for (int i = count_1[0]; i < count; i++)
 		{
 			cout << "Enter the data" << endl << endl;
-			cout << "Passenger's last name and name: ";
+			cout << "Last name and first name of the passenger (separated by a space): ";
 			string name;
 			string surname;
 			cin >> surname >> name;
@@ -905,7 +896,6 @@ int main()
 	empty_file(path, salon, count, count_1);
 	Sleep(500);
 	system("cls");
-
 	while (flag != 0)
 	{
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
@@ -954,9 +944,7 @@ int main()
 		system("pause");
 		system("cls");
 	}
-
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 6);
 	return 0;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); 
-
 }
