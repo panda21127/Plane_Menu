@@ -416,7 +416,7 @@ void pechati(string path, plane* salon, int count_1[])
 	perevod(path, salon, count_1);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 3);
 	cout << '\n';
-	cout << "------------------Information about student № " << passenger + 1 << " ------------------";
+	cout << "------------------Information about passenger № " << passenger + 1 << " ------------------";
 	cout << '\n';
 	cout << " Passenger's last name and name is : " << '\t' << salon[passenger].surname_name;
 	cout << '\n';
