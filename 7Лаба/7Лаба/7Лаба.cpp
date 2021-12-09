@@ -520,6 +520,21 @@ void naity(string path, plane* salon, int count_1[])
 	cout << endl;
 	int group;
 	group = onlyNumbers();
+	while (group <= 0)
+	{
+		cout << " -_- " << endl;
+		cout << "Enter a number from the list " << endl;
+		group = onlyNumbers();
+		while (((group <= 0) && (group >= 0)))
+		{
+			if (((group <= 0) && (group >= 0)))
+			{
+				group = 0;
+				cout << "Prover";
+				group = onlyNumbers();
+			}
+		}
+	}
 	string* finding_names = new string[count_1[0]];
 	for (int i = 0; i < count_1[0]; i++)
 	{
