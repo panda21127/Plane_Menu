@@ -873,11 +873,71 @@ void naity_date(string path, plane* salon, int count_1[])
 			}
 		}
 	}
+
+	if ((b1 == 1) || (b1 == 3) || (b1 == 5) || (b1 == 7) || (b1 == 8) || (b1 == 10) || (b1 == 12))
+	{
+		int A = a[1] * 365 + b[1] * 31 + c[1];
+	}
+	else
+	{
+		if ((b1 == 4) || (b1 == 6) || (b1 == 9) || (b1 == 11))
+		{
+			int A = a[1] * 365 + b[1] * 30 + c[1];
+		}
+		else
+		{
+			if (b1 == 2)
+			{
+				int A = a[1] * 365 + b[1] * 28 + c[1];
+			}
+
+		}
+	}
+
+	if ((b1 == 1) || (b1 == 3) || (b1 == 5) || (b1 == 7) || (b1 == 8) || (b1 == 10) || (b1 == 12))
+	{
+		int B = a[2] * 365 + b[2] * 12 + c[2];
+	}
+	else
+	{
+		if ((b1 == 4) || (b1 == 6) || (b1 == 9) || (b1 == 11))
+		{
+			int B = a[2] * 365 + b[2] * 12 + c[2];
+		}
+		else
+		{
+			if (b1 == 2)
+			{
+				int B = a[2] * 365 + b[2] * 12 + c[2];
+			}
+
+		}
+	}
 	int A = a[1] * 365 + b[1] * 12 + c[1];
 	int B = a[2] * 365 + b[2] * 12 + c[2];
 	int C;
 	for (int i = 0; i < count_1[0]; i++)
 	{
+		
+		if ((salon[i].info.month == 1) || (salon[i].info.month == 3) || (salon[i].info.month == 5) || (salon[i].info.month == 7) || (salon[i].info.month == 8) || (salon[i].info.month == 10) || (salon[i].info.month == 12))
+		{
+			C = salon[i].info.year * 365 + salon[i].info.month * 31 + salon[i].info.day;
+		}
+		else
+		{
+			if ((salon[i].info.month == 4) || (salon[i].info.month == 6) || (salon[i].info.month == 9) || (salon[i].info.month == 11))
+			{
+				C = salon[i].info.year * 365 + salon[i].info.month * 30 + salon[i].info.day;
+			}
+			else
+			{
+				if (salon[i].info.month == 2)
+				{
+					C = salon[i].info.year * 365 + salon[i].info.month * 28 + salon[i].info.day;
+				}
+
+			}
+		}
 		C = salon[i].info.year * 365 + salon[i].info.month * 12 + salon[i].info.day;
 		if ((C >= A) and (C <= B))
 		{
