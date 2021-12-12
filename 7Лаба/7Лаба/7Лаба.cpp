@@ -261,19 +261,65 @@ int add(string path, plane* salon, int count, int count_1[])
 			cout << "Data Month: ";                     
 			salon[i].info.month = Monthhhh();
 			cout << "Data Day: ";                       salon[i].info.day= onlyNumbers();
-			while (((salon[i].info.day >= 30) || (salon[i].info.day <= 0)))
+			if ((salon[i].info.month == 1) || (salon[i].info.month == 3) || (salon[i].info.month == 5) || (salon[i].info.month == 7) || (salon[i].info.month == 8) || (salon[i].info.month == 10) || (salon[i].info.month == 12))
 			{
-				cout << " -_- " << endl;
-				cout << "Enter a number from the list " << endl;
-				salon[i].info.day = onlyNumbers();
-				while (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
+				while (((salon[i].info.day >= 32) || (salon[i].info.day <= 0)))
 				{
-					if (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
+					cout << " -_- " << endl;
+					cout << "Enter a number from the list " << endl;
+					salon[i].info.day = onlyNumbers();
+					while (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
 					{
-						salon[i].info.day = 0;
-						cout << "Prover";
-						salon[i].info.day = onlyNumbers();
+						if (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
+						{
+							salon[i].info.day = 0;
+							cout << "Prover";
+							salon[i].info.day = onlyNumbers();
+						}
 					}
+				}
+			}
+			else
+			{
+				if ((salon[i].info.month == 4) || (salon[i].info.month == 6) || (salon[i].info.month == 9) || (salon[i].info.month == 11))
+				{
+					while (((salon[i].info.day >= 31) || (salon[i].info.day <= 0)))
+					{
+						cout << " -_- " << endl;
+						cout << "Enter a number from the list " << endl;
+						salon[i].info.day = onlyNumbers();
+						while (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
+						{
+							if (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
+							{
+								salon[i].info.day = 0;
+								cout << "Prover";
+								salon[i].info.day = onlyNumbers();
+							}
+						}
+					}
+				}
+				else
+				{
+					if (salon[i].info.month == 2)
+					{
+						while (((salon[i].info.day >= 29) || (salon[i].info.day <= 0)))
+						{
+							cout << " -_- " << endl;
+								cout << "Enter a number from the list " << endl;
+								salon[i].info.day = onlyNumbers();
+								while (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
+								{
+									if (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
+									{
+										salon[i].info.day = 0;
+										cout << "Prover";
+										salon[i].info.day = onlyNumbers();
+									}
+								}
+						}
+					}
+
 				}
 			}
 			cout << "________________________________" << endl;
@@ -576,124 +622,7 @@ int empty_file(string path, plane* salon, int count, int count_1[])
 	{
 		cout << "File opening error" << endl;
 		fout.open(path, ofstream::app);
-		cout << "How many passengers" << '\n';
-		count = onlyNumbers();
-		while (((count <= 0) && (count >= 0)))
-		{
-			if (((count <= 0) && (count >= 0)))
-			{
-				count = 0;
-				cout << "Prover";
-				count = onlyNumbers();
-			}
-		}
-		while (((count >= 30) || (count <= 0)))
-		{
-			cout << " -_- " << endl;
-			cout << "Enter a number from the list " << endl;
-			count = onlyNumbers();
-			while (((count <= 0) && (count >= 0)))
-			{
-				if (((count <= 0) && (count >= 0)))
-				{
-					count = 0;
-					cout << "Prover";
-					count = onlyNumbers();
-				}
-			}
-		}
-
-		count += count_1[0];
-		for (int i = count_1[0]; i < count; i++)
-		{
-			cout << "Enter the data" << endl << endl;
-			cout << "Last name and first name of the passenger (separated by a space): ";
-			string name;
-			string surname;
-			cin >> surname >> name;
-			salon[i].surname_name = surname + " " + name;
-			cout << "Company: ";                       cin >> salon[i].company;
-			cout << "Flight: ";                        salon[i].flight = onlyNumbers();
-			while (salon[i].flight <= 0)
-			{
-				cout << " -_- " << endl;
-				cout << "Enter a number from the list " << endl;
-				salon[i].flight = onlyNumbers();
-				while (((salon[i].flight <= 0) && (salon[i].flight >= 0)))
-				{
-					if (((salon[i].flight <= 0) && (salon[i].flight >= 0)))
-					{
-						salon[i].flight = 0;
-						cout << "Prover";
-						salon[i].flight = onlyNumbers();
-					}
-				}
-			}
-			cout << "Ticket price: ";                  salon[i].cost = onlyNumbers();
-			while (salon[i].cost <= 0)
-			{
-				cout << " -_- " << endl;
-				cout << "Enter a number from the list " << endl;
-				salon[i].cost = onlyNumbers();
-				while (((salon[i].cost <= 0) && (salon[i].cost >= 0)))
-				{
-					if (((salon[i].cost <= 0) && (salon[i].cost >= 0)))
-					{
-						salon[i].cost = 0;
-						cout << "Prover";
-						salon[i].cost = onlyNumbers();
-					}
-				}
-			}
-			cout << "Data Year";                       salon[i].info.year = onlyNumbers();
-			while (salon[i].info.year <= 0)
-			{
-				cout << " -_- " << endl;
-				cout << "Enter a number from the list " << endl;
-				salon[i].info.year = onlyNumbers();
-				while (((salon[i].info.year <= 0) && (salon[i].info.year >= 0)))
-				{
-					if (((salon[i].info.year <= 0) && (salon[i].info.year >= 0)))
-					{
-						salon[i].info.year = 0;
-						cout << "Prover";
-						salon[i].info.year = onlyNumbers();
-					}
-				}
-			}
-			cout << "Data Month";                      salon[i].info.month=Monthhhh();
-			cout << "Data Day";                       salon[i].info.day = onlyNumbers();
-			while (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
-			{
-				if (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
-				{
-					salon[i].info.day = 0;
-					cout << "Prover";
-					salon[i].info.day = onlyNumbers();
-				}
-			}
-			while (((salon[i].info.day >= 30) || (salon[i].info.day <= 0)))
-			{
-				cout << " -_- " << endl;
-				cout << "Enter a number from the list " << endl;
-				salon[i].info.day = onlyNumbers();
-				while (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
-				{
-					if (((salon[i].info.day <= 0) && (salon[i].info.day >= 0)))
-					{
-						salon[i].info.day = 0;
-						cout << "Prover";
-						salon[i].info.day = onlyNumbers();
-					}
-				}
-			}
-			cout << "________________________________" << endl;
-		}
-		count_1[0] = count;
-		for (int i = 0; i < count_1[0]; i++)
-		{
-			fout << salon[i].surname_name << "   " << salon[i].company << "   " << salon[i].flight << "   " << salon[i].cost << "   " << salon[i].info.year << "   " << salon[i].info.month << "   " << salon[i].info.day << endl;
-		}
+		add(path,salon,count,count_1);
 		fin.close();
 	}
 	else
@@ -708,26 +637,39 @@ void naity_date(string path, plane* salon, int count_1[])
 	int a1, a2, c1, c2,b1, b2;
 	perevod(path, salon, count_1);
 	cout << "Enter the start dates of the search and the end dates of the search"<<endl;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 	cout << "Data Year 1: ";                     
 	a1 = onlyNumbers();
-	while (((a1 <= 0) && (a1 >= 0)))
+	while (a1 <= 0)
 	{
-		if (((a1 <= 0) && (a1 >= 0)))
+		cout << " -_- " << endl;
+		cout << "Enter a number from the list " << endl;
+		a1 = onlyNumbers();
+		while (((a1 <= 0) && (a1 >= 0)))
 		{
-			a1 = 0;
-			cout << "Prover";
-			a1 = onlyNumbers();
+			if (((a1 <= 0) && (a1 >= 0)))
+			{
+				a1 = 0;
+				cout << "Prover";
+				a1 = onlyNumbers();
+			}
 		}
 	}
 	cout << "Data Year 2: ";
 	a2 = onlyNumbers();
-	while (((a2 <= 0) && (a2 >= 0)))
+	while (a2 <= 0)
 	{
-		if (((a2 <= 0) && (a2 >= 0)))
+		cout << " -_- " << endl;
+		cout << "Enter a number from the list " << endl;
+		a2 = onlyNumbers();
+		while (((a2 <= 0) && (a2 >= 0)))
 		{
-			a2 = 0;
-			cout << "Prover";
-			a2 = onlyNumbers();
+			if (((a2 <= 0) && (a2 >= 0)))
+			{
+				a2 = 0;
+				cout << "Prover";
+				a2 = onlyNumbers();
+			}
 		}
 	}
 	cout << "Data Month 1: ";  
@@ -738,56 +680,131 @@ void naity_date(string path, plane* salon, int count_1[])
 	cout << endl;
 	cout << "Data Day 1: ";                     
 	c1 = onlyNumbers();
-	while (((c1 <= 0) && (c1 >= 0)))
+	if ((b1 == 1) || (b1 == 3) || (b1 == 5) || (b1 == 7) || (b1 == 8) || (b1 == 10) || (b1 == 12))
 	{
-		if (((c1 <= 0) && (c1 >= 0)))
+		while (((c1 >= 32) || (c1 <= 0)))
 		{
-			c1 = 0;
-			cout << "Prover";
+			cout << " -_- " << endl;
+			cout << "Enter a number from the list " << endl;
 			c1 = onlyNumbers();
+			while (((c1 <= 0) && (c1 >= 0)))
+			{
+				if (((c1 <= 0) && (c1 >= 0)))
+				{
+					c1 = 0;
+					cout << "Prover";
+					c1 = onlyNumbers();
+				}
+			}
 		}
 	}
-	while (((c1 >= 30) || (c1 <= 0)))
+	else
 	{
-		cout << " -_- " << endl;
-		cout << "Enter a number from the list " << endl;
-		c1 = onlyNumbers();
-		while (((c1 <= 0) && (c1 >= 0)))
+		if ((b1 == 4) || (b1 == 6) || (b1 == 9) || (b1 == 11))
 		{
-			if (((c1 <= 0) && (c1 >= 0)))
+			while (((c1 >= 31) || (c1 <= 0)))
 			{
-				c1 = 0;
-				cout << "Prover";
+				cout << " -_- " << endl;
+				cout << "Enter a number from the list " << endl;
 				c1 = onlyNumbers();
+				while (((c1 <= 0) && (c1 >= 0)))
+				{
+					if (((c1 <= 0) && (c1 >= 0)))
+					{
+						c1 = 0;
+						cout << "Prover";
+						c1 = onlyNumbers();
+					}
+				}
 			}
+		}
+		else
+		{
+			if (b1 == 2)
+			{
+				while (((c1 >= 29) || (c1 <= 0)))
+				{
+					cout << " -_- " << endl;
+					cout << "Enter a number from the list " << endl;
+					c1 = onlyNumbers();
+					while (((c1 <= 0) && (c1 >= 0)))
+					{
+						if (((c1 <= 0) && (c1 >= 0)))
+						{
+							c1 = 0;
+							cout << "Prover";
+							c1 = onlyNumbers();
+						}
+					}
+				}
+			}
+
 		}
 	}
 	cout << "Data Day 2: ";
 	c2 = onlyNumbers();
-	while (((c2 <= 0) && (c2 >= 0)))
+	if ((b2 == 1) || (b2 == 3) || (b2 == 5) || (b2 == 7) || (b2 == 8) || (b2 == 10) || (b2 == 12))
 	{
-		if (((c2 <= 0) && (c2 >= 0)))
+		while (((c2 >= 32) || (c2 <= 0)))
 		{
-			c2 = 0;
-			cout << "Prover";
+			cout << " -_- " << endl;
+			cout << "Enter a number from the list " << endl;
 			c2 = onlyNumbers();
-		}
-	}
-	while (((c2 >= 30) || (c2 <= 0)))
-	{
-		cout << " -_- " << endl;
-		cout << "Enter a number from the list " << endl;
-		c2 = onlyNumbers();
-		while (((c2 <= 0) && (c2 >= 0)))
-		{
-			if (((c2 <= 0) && (c2 >= 0)))
+			while (((c2 <= 0) && (c2 >= 0)))
 			{
-				c2 = 0;
-				cout << "Prover";
-				c2 = onlyNumbers();
+				if (((c2 <= 0) && (c2 >= 0)))
+				{
+					c2 = 0;
+					cout << "Prover";
+					c2 = onlyNumbers();
+				}
 			}
 		}
 	}
+	else
+	{
+		if ((b2 == 4) || (b2 == 6) || (b2 == 9) || (b2 == 11))
+		{
+			while (((c2 >= 31) || (c2 <= 0)))
+			{
+				cout << " -_- " << endl;
+				cout << "Enter a number from the list " << endl;
+				c2 = onlyNumbers();
+				while (((c2 <= 0) && (c2 >= 0)))
+				{
+					if (((c2 <= 0) && (c2 >= 0)))
+					{
+						c2 = 0;
+						cout << "Prover";
+						c2 = onlyNumbers();
+					}
+				}
+			}
+		}
+		else
+		{
+			if (b2 == 2)
+			{
+				while (((c2 >= 29) || (c2 <= 0)))
+				{
+					cout << " -_- " << endl;
+					cout << "Enter a number from the list " << endl;
+					c2 = onlyNumbers();
+					while (((c2 <= 0) && (c2 >= 0)))
+					{
+						if (((c2 <= 0) && (c2 >= 0)))
+						{
+							c2 = 0;
+							cout << "Prover";
+							c2 = onlyNumbers();
+						}
+					}
+				}
+			}
+
+		}
+	}
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 	cout << "------------------------------";
 	cout << endl;
 	int a[3], b[3], c[3];
@@ -856,12 +873,12 @@ void naity_date(string path, plane* salon, int count_1[])
 			}
 		}
 	}
-	int A = a[1] * 364 + b[1] * 12 + c[1];
-	int B = a[2] * 364 + b[2] * 12 + c[2];
+	int A = a[1] * 365 + b[1] * 12 + c[1];
+	int B = a[2] * 365 + b[2] * 12 + c[2];
 	int C;
 	for (int i = 0; i < count_1[0]; i++)
 	{
-		C = salon[i].info.year * 360 + salon[i].info.month * 12 + salon[i].info.day;
+		C = salon[i].info.year * 365 + salon[i].info.month * 12 + salon[i].info.day;
 		if ((C >= A) and (C <= B))
 		{
 			cout << endl;
